@@ -1,5 +1,5 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "extends": [
     "airbnb"
   ],
@@ -15,11 +15,15 @@
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 2017,
+    "requireConfigFile": false,
     "ecmaFeatures": {
       "jsx": true,
       "experimentalObjectRestSpread": true,
-      "modules": true
-    }
+      "modules": true 
+    },
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+   }
   },
   "plugins": [
     "react-hooks"
