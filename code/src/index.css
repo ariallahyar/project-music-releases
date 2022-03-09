@@ -60,13 +60,18 @@ code {
    width: 8%;
    height: 8%;
  }
+
+ .playWrapper {
+  width: 18%;
+  height: 18%;
+}
  
  .playIcon {
-   width: 18%;
-   height: 18%;
+   width: 100%;
+   height: 100%;
  }
 
- .playIcon:hover {
+ .playWrapper:hover {
   width: 22%;
   height: 22%;
   transition: all 0.3s ease;
