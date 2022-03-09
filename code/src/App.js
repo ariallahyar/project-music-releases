@@ -9,6 +9,7 @@ export const App = () => {
     <div>
       {data.albums.items.map(album => {
         return <Album 
+          key={album.id}
           coverImage={album.images[0].url}
           albumName={album.name}
           artistName= {album.artists.map(artist => {
