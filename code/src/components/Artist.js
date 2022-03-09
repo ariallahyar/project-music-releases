@@ -17,6 +17,6 @@ export const Artist = (props) => {
 	}
 
 	return (
-			<h3>{name}</h3>
+			<h3 className="albumArtists">{name}</h3>
 	);
 };

@@ -5,11 +5,26 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #121212;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.albumWrapper {
+  padding: 2rem;
+  background-color: #171717;
+}
+
+
+.albumArtists {
+  color: #757272;
+}
+
+.albumName {
+  color: white;
 }
 
 .albumsWrapper {
@@ -18,9 +33,28 @@ code {
   grid-gap: 1rem;
 }
 
-img {
+.albumImageWrapper {
+  position: relative;
   width: 100%;
 }
+
+.albumImage {
+  width: 100%;
+}
+
+.albumOverlay {
+  background-color: rgba(23, 23, 23, 0.6);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+ }
+ 
+ .albumImageWrapper:hover .albumOverlay {
+   display: block;
+ }
 
 /* ------------------ MEDIA QUERIES ------------------ */
 
