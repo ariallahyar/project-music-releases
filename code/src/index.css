@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.albumsWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+}
+
+img {
+  width: 100%;
+}
+
+/* ------------------ MEDIA QUERIES ------------------ */
+
+@media screen and (min-width: 768px) {
+  .albumsWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .albumsWrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

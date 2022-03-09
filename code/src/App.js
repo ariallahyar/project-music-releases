@@ -6,7 +6,7 @@ console.log(data)
 
 export const App = () => {
   return (
-    <div>
+    <div className="albumsWrapper">
       {data.albums.items.map(album => {
         return <Album 
           key={album.id}
