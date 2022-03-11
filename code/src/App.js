@@ -16,9 +16,8 @@ export const App = () => {
             coverImage={album.images[0].url}
             albumName={album.name}
             albumUrl={album.external_urls.spotify}
-            artistName={album.artists.map(artist => {
-              return artist.name
-            })}
+            artistName={album.artists.map(artist => artist.name)}
+            artistUrl={album.artists.map(artist => artist.external_urls.spotify)}
           />
         })}
       </div>

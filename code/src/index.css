@@ -11,6 +11,11 @@ main {
   margin: 0 auto;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 h1 {
   color: #fff;
   font-size: 20px;
@@ -94,11 +99,7 @@ h1 {
   align-items: center;
 }
 
-.albumName:hover {
-  text-decoration: underline;
-}
-
- .artistsName:hover {
+.albumName:hover, .artistName:hover {
   text-decoration: underline;
 }
 

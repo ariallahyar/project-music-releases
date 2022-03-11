@@ -19,6 +19,7 @@ export const Album = (props) => {
       <h2 className="albumName">{props.albumName}</h2>
       <Artist
         name={props.artistName}
+        url={props.artistUrl}
       />
     </div>
   );
