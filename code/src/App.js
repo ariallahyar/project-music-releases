@@ -1,5 +1,5 @@
 import React from 'react'
-import data from './data.json'
+import data from './data-new.json'
 import Header from 'components/Header.js'
 import { Album } from 'components/Album.js'
 
