@@ -6,7 +6,7 @@ export const Artist = (props) => {
 		return (
 			<div>
 				<a href={props.url[0]} alt=''>
-					<h3 className="artistsName">{props.name[0]}</h3>
+					<h3 className="artistsName artistName">{props.name[0]}</h3>
 				</a>
 			</div>
 		)
