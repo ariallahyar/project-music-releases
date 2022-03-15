@@ -1,24 +1,38 @@
-import React from 'react'
-import data from './data-new.json'
-import Header from 'components/Header.js'
-import { Album } from 'components/Album.js'
+import React from "react";
+import rawData from "./data-new.json";
+import Header from "components/Header.js";
+import { Album } from "components/Album.js";
 
-console.log(data)
+const parseArtist = (rawArtist) => ({
+  name: rawArtist.name,
+  url: rawArtist.external_urls.spotify,
+});
+
+const data = {
+  albums: rawData.albums.items.map((album) => ({
+    id: album.id,
+    name: album.name,
+    coverImage: album.images[0].url,
+    url: album.external_urls.spotify,
+    artists: album.artists.map(parseArtist),
+  })),
+};
 
 export const App = () => {
   return (
     <main>
-      <Header />,
+      <Header />
       <div className="albumsWrapper">
-        {data.albums.items.map(album => {
-          return <Album
-            key={album.id}
-            coverImage={album.images[0].url}
-            albumName={album.name}
-            albumUrl={album.external_urls.spotify}
-            artistName={album.artists.map(artist => artist.name)}
-            artistUrl={album.artists.map(artist => artist.external_urls.spotify)}
-          />
+        {data.albums.map((album) => {
+          return (
+            <Album
+              key={album.id}
+              coverImage={album.coverImage}
+              albumName={album.name}
+              albumUrl={album.url}
+              artists={album.artists}
+            />
+          );
         })}
       </div>
     </main>

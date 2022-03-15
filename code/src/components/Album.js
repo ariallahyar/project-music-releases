@@ -1,28 +1,38 @@
-import React from 'react'
-import { Artist } from './Artist'
+import React from "react";
+import { Artists } from "components/Artist.js";
 
-export const Album = (props) => {
+export const Album = ({ coverImage, albumUrl, albumName, artists }) => {
   return (
     <div className="albumWrapper">
-      <div className='albumImageWrapper'>
-        <img className='albumImage' src={props.coverImage} alt="album cover" />
-        <div className='albumOverlay'>
-          <img className="icon" src="../../icons/heart_white.svg" alt="like button" />
-          <div className='playWrapper'>
-            <a href={props.albumUrl}>
-              <img className="playIcon" src="../../icons/play_white.svg" alt="play button" />
+      <div className="albumImageWrapper">
+        <img className="albumImage" src={coverImage} alt="album cover" />
+        <div className="albumOverlay">
+          <img
+            className="icon"
+            src="../../icons/heart_white.svg"
+            alt="like button"
+          />
+          <div className="playWrapper">
+            <a href={albumUrl}>
+              <img
+                className="playIcon"
+                src="../../icons/play_white.svg"
+                alt="play button"
+              />
             </a>
           </div>
-          <img className="icon" src="../../icons/dots_white.svg" alt="more button" />
+          <img
+            className="icon"
+            src="../../icons/dots_white.svg"
+            alt="more button"
+          />
         </div>
       </div>
       <h2 className="albumName">
-        <a href={props.albumUrl}>{props.albumName}</a>
+        <a href={albumUrl}>{albumName}</a>
       </h2>
-      <Artist
-        name={props.artistName}
-        url={props.artistUrl}
-      />
+
+      <Artists artists={artists} />
     </div>
   );
 };

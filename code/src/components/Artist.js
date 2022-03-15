@@ -1,41 +1,49 @@
-import React from 'react'
+import React from "react";
 
-export const Artist = (props) => {
+export const Artists = ({ artists }) => {
 
-	if (props.name.length === 1) {
-		return (
-			<div>
-				<a href={props.url[0]} alt=''>
-					<h3 className="artistsName artistName">{props.name[0]}</h3>
-				</a>
-			</div>
-		)
+  if (artists.length === 1) {
+    return (
+      <div>
+        <a href={artists[0].url} alt="">
+          <h3 className="artistsName artistName">{artists[0].name}</h3>
+        </a>
+      </div>
+    );
+  } else if (artists.length === 2) {
+    return (
+      <div>
+        <h3 className="artistsName">
+          <a className="artistName" href={artists[0].url} alt="">
+            {artists[0].name}
+          </a>
+          {" & "}
+          <a className="artistName" href={artists[1].url} alt="">
+            {artists[1].name}
+          </a>
+        </h3>
+      </div>
+    );
+  } else {
+    const lastArtist = artists.pop();
 
-	} else if (props.name.length === 2) {
-		return (
-			<div>
-				<h3 className='artistsName'>
-					<a className='artistName' href={props.url[0]} alt=''>{props.name[0]}</a>
-					&nbsp;&&nbsp;
-					<a className='artistName' href={props.url[1]} alt=''>{props.name[1]}</a>
-				</h3>
-			</div>
-		)
-
-	} else {
-
-		const lastArtist = props.name.pop();
-		const lastLink = props.url.pop();
-
-		return (
-			<h3 className='artistsName'>
-
-				{props.name.map((name) => {
-					return <><a className='artistName' href={props.url[props.name.indexOf(name)]}>{name}</a>, &nbsp;</>
-				})
-				}
-				&&nbsp;<a className='artistName' href={lastLink}>{lastArtist}</a>
-			</h3>
-		)
-	}
+    return (
+      <h3 className="artistsName">
+        {artists.map((artist, index) => {
+          return (
+            <span key={index}>
+              <a className="artistName" href={artist.url}>
+                {artist.name}
+              </a>
+              {", "}
+            </span>
+          );
+        })}
+        {"& "}
+        <a className="artistName" href={lastArtist.url}>
+          {lastArtist.name}
+        </a>
+      </h3>
+    );
+  }
 };
