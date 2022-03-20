@@ -1,12 +1,21 @@
 # Music Releases
-Replace this readme with your own information about your project.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project was done in collaboration with Åsa Sieurin using pair programming. The focus of the project was to get started with React and be introduced to how to:
 
-## The problem
+- write JSX
+- create React components
+- use `.map` to iterate over an array of data and mount many components
+- use React props to feed information to components.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The assignment was to create a React app that:
+
+- shows new album and singles releases
+- follows the provided design as closely as possible
+- was done in pair programming
+
+
+As a personal stretch goal we decided to not use the data provided in the project from Technigo from 2019, but instead fetched the actual current releases from March -22. Since setting up a renewable token using OAuth to continously update the new releases ended up being too complex for the level we're at, we instead made one API call and saved the data in a new file.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://spotifynewreleases2022.netlify.app/
